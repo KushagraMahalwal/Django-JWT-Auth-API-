@@ -55,7 +55,6 @@ class ProfileView(APIView):
     serializer = ProfileViewSerializer(request.user)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
-
 # Change password when password is already known
 class UserChangePasswordView(APIView):
   renderer_classes = [UserRenderer]
