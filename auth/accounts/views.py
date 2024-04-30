@@ -9,7 +9,7 @@ from django.contrib.auth import authenticate
 from rest_framework.permissions import IsAuthenticated
 from accounts.renderers import UserRenderer
 from accounts.serializers import (UserRegistrationSerializer, LoginSerializer,ProfileViewSerializer,
-                                   UserPasswordResetSerializer, SendPasswordResetEmailSerializer)
+                                   UserPasswordResetSerializer, SendPasswordResetEmailSerializer,UserPasswordChangeSerializer)
 from rest_framework_simplejwt.tokens import RefreshToken
 
 
@@ -61,7 +61,7 @@ class UserChangePasswordView(APIView):
   renderer_classes = [UserRenderer]
   permission_classes = [IsAuthenticated]
   def post(self, request):
-    serializer = UserPasswordResetSerializer(data=request.data,context={'user': request.user})
+    serializer = UserPasswordChangeSerializer(data=request.data,context={'user': request.user})
     serializer.is_valid(raise_exception=True)
     return Response({"msg": "Password Changed successfully"})
 
