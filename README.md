@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Django REST Framework Complete Authentication API with Simple JWT</title>
+    <h1>
+      Django REST Framework Complete Authentication API with Simple JWT</title>
+  </h1>
 </head>
 <body>
     <h2>To Run this Project follow the steps below:</h2>
@@ -17,4 +18,3 @@
     </pre>
 </body>
 </html>
-
